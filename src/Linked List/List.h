@@ -9,6 +9,10 @@ public:
 	~List();
 	void insert(int);
 	void display();
+	bool empty();
+	Node* getFirst();
+	void erase(int);
+	Node* reverse(Node*);
 
 private:
 	Node* first;
