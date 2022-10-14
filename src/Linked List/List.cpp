@@ -67,18 +67,18 @@ void List::erase(int pos) {
 
 void List::reverse() {
 	
-	Node* nex = NULL;
-	Node* preptr = NULL;
-	Node* current = first;
+	Node* nex = NULL;//Declares a temp var
+	Node* preptr = NULL;//A pointer that will be used for navigating and reversing
+	Node* current = first;//Creates the main navigating pointer; sets the pointer to point to the first node in the LL
 
-	while (current != NULL) {
-		nex = current->next;
-		current->next = preptr;
-		preptr = current;
-		current = nex;
+	while (current != NULL) { //  A while loop that will keep going untill the current pointer is null
+		nex = current->next; // Set the temp var to point to the next node in the list
+		current->next = preptr;//Current->next now points to the previous node in the list
+		preptr = current;//The previous node is now the previous current
+		current = nex; //The current node is now the next in the previous next node that was stored in the temp var nex above;
 	}
 	
-	first = preptr;
+	first = preptr;//The first node in the list is now the previous end of the list
 }
 
 bool List::empty() {
@@ -86,8 +86,4 @@ bool List::empty() {
 		return true;
 	else
 		return false;
-}
-
-Node* List::getFirst() {
-	return first;
 }

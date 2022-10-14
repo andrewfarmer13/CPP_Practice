@@ -10,7 +10,6 @@ public:
 	void insert(int);
 	void display();
 	bool empty();
-	Node* getFirst();
 	void erase(int);
 	void reverse();
 
