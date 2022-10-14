@@ -65,16 +65,20 @@ void List::erase(int pos) {
 	}
 }
 
-Node* List::reverse(Node* head) {
-	if (head == NULL || head->next == NULL) {
-		return head;
+void List::reverse() {
+	
+	Node* nex = NULL;
+	Node* preptr = NULL;
+	Node* current = first;
+
+	while (current != NULL) {
+		nex = current->next;
+		current->next = preptr;
+		preptr = current;
+		current = nex;
 	}
-	else {
-		Node* rest = reverse(head->next);//Reverses the linked list recursivley.
-		head->next->next = head;//Puts the beginning of the linked list at the end of the linked list
-		head->next = NULL;//Sets the end of the linked list to NULL
-		return head;//Returns the head pointer
-	}
+	
+	first = preptr;
 }
 
 bool List::empty() {

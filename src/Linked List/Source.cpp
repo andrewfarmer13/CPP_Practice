@@ -16,7 +16,7 @@ int main() {
 	l.erase(2);
 	l.display();
 	std::cout << "LL Reversed: \n";
-	l.reverse(l.getFirst());
+	l.reverse();
 	l.display();
 	std::cout << l.empty();
 

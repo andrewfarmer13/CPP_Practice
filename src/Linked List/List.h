@@ -12,7 +12,7 @@ public:
 	bool empty();
 	Node* getFirst();
 	void erase(int);
-	Node* reverse(Node*);
+	void reverse();
 
 private:
 	Node* first;
