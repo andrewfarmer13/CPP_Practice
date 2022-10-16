@@ -1,11 +1,15 @@
 #pragma once
 #ifndef NODE_H
 
-template <typename T>
 class Node {
 public:
-	T data;
+	int data;
 	Node* next;
-	Node(T, Node*);
+	Node(int, Node*);
 };
+
+inline Node::Node(int d, Node* n) {
+	data = d;
+	next = n;
+}
 #endif // !NODE_H
